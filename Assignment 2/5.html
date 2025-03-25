@@ -1,156 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewsTailor Community</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #f4f4f4; /* Optional background color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            display: flex;
-            width: 90%;
-            max-width: 960px;
-        }
-
-        .left-section {
-            background-color: #333; /* Dark background for the left */
-            color: #eee;
-            padding: 40px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .left-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .left-section p {
-            font-size: 1em;
-            color: #ccc;
-            margin-bottom: 30px;
-        }
-
-        .right-section {
-            background-color: #eee; /* Light background for the right */
-            padding: 40px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .right-section h3 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #333;
-            line-height: 1.3;
-        }
-
-        .input-group {
-            display: flex;
-            margin-bottom: 20px;
-        }
-
-        .input-group input[type="email"] {
-            flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px;
-            font-size: 1em;
-        }
-
-        .input-group button {
-            background-color: #4CAF50; /* Green subscribe button */
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        .input-group button:hover {
-            background-color: #45a049;
-        }
-
-        .terms {
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        .terms a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .terms a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .left-section, .right-section {
-                padding: 30px;
-            }
-
-            .left-section h2 {
-                font-size: 2em;
-            }
-
-            .right-section h3 {
-                font-size: 1.5em;
-            }
-
-            .input-group {
-                flex-direction: column;
-            }
-
-            .input-group input[type="email"] {
-                border-radius: 5px;
-                margin-bottom: 10px;
-            }
-
-            .input-group button {
-                border-radius: 5px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewsTailor Community</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+      transition: background-color 0.3s ease;
+    }
+    /* Header with Navigation */
+    header {
+      background-color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-radius: 0 0 10px 10px;
+      margin-bottom: 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li:first-child {
+      margin-left: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #388e3c;
+    }
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #388e3c;
+    }
+    /* Community Container */
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+      animation: fadeIn 1s ease-in;
+    }
+    .left-section {
+      background-color: #333;
+      color: #eee;
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+    .left-section:hover {
+      background-color: #444;
+    }
+    .left-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .left-section p {
+      font-size: 1em;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .right-section {
+      background-color: #eee;
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+    .right-section:hover {
+      background-color: #ddd;
+    }
+    .input-group {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .input-group input[type="email"] {
+      flex-grow: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      font-size: 1em;
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+    .input-group input:hover {
+      background-color: #e8f5e9;
+    }
+    .input-group button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .input-group button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+    .message {
+      color: green;
+      font-size: 1em;
+      display: none;
+      margin-top: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
-            <p>Stay Informed, Stay Engaged</p>
-            <h2>Join the NewsTailor Community</h2>
-        </div>
-        <div class="right-section">
-            <h3>Experience a news feed that evolves with your interests and preferences.</h3>
-            <div class="input-group">
-                <input type="email" placeholder="Your personalized news journey starts here">
-                <button type="submit">Subscribe Now</button>
-            </div>
-            <p class="terms">By clicking Subscribe Now you're confirming that you agree with our <a href="#">Terms and Conditions</a>.</p>
-        </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="1.html">Home</a></li>
+        <li><a href="2.html">News Section</a></li>
+        <li><a href="3.html">How It Works</a></li>
+      </ul>
+    </nav>
+    <div class="logo">NewsTailor</div>
+    <nav>
+      <ul>
+        <li><a href="4.html">Sign-Up</a></li>
+        <li><a href="5.html">Community</a></li>
+        <li><a href="6.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="left-section">
+      <p>Stay Informed, Stay Engaged</p>
+      <h2>Join the NewsTailor Community</h2>
     </div>
+    <div class="right-section">
+      <h3>Experience a news feed that evolves with your interests and preferences.</h3>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Your personalized news journey starts here" />
+        <button type="submit" onclick="validateEmail()">Subscribe Now</button>
+      </div>
+      <p class="message" id="successMessage">Thank you for subscribing!</p>
+    </div>
+  </div>
+  <script>
+    function validateEmail() {
+      let emailInput = document.getElementById("email").value;
+      let successMessage = document.getElementById("successMessage");
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (emailPattern.test(emailInput)) {
+        successMessage.style.display = "block";
+        successMessage.style.color = "green";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  </script>
 </body>
 </html>
